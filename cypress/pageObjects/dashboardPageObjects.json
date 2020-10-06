@@ -1,0 +1,7 @@
+{
+    "welcomeUserNameBanner":"#welcome",
+
+    "logoutButton":"a[href='/index.php/auth/logout']",
+    
+    "pimModule":"a[id='menu_pim_viewPimModule']"
+}

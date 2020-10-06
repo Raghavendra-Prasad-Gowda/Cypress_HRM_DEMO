@@ -1,0 +1,14 @@
+{
+  "name": "cypress_hrm_demo",
+  "version": "1.0.0",
+  "description": "HRM Demo Cypress ",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Raghavendra Prasad R",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^5.3.0"
+  }
+}

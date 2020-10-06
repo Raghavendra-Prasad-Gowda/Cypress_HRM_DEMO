@@ -1,0 +1,10 @@
+{
+    "employeeListTab":"#mainMenuFirstLevelUnorderedList #menu_pim_viewEmployeeList",
+
+    "employeeNameSearchTextbox":"li > #empsearch_employee_name_empName",
+
+    "searchButton":"#searchBtn",
+
+    "firstNameValueInFirstResult":"tbody > :nth-child(1) > :nth-child(3)"
+
+}
