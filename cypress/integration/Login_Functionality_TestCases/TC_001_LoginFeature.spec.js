@@ -2,7 +2,7 @@
 
 const loginPageLocators = require ('../../pageObjects/loginPageObjects.json');
 const dashboardPageLocators = require('../../pageObjects/dashboardPageObjects.json');
-//const appCredentials = require('../../fixtures/appCredentials.json');
+const appCredentials = require('../../fixtures/appCredentials.json');
 
 describe("Login Functionality Verification", ()=>{
 
@@ -17,7 +17,7 @@ describe("Login Functionality Verification", ()=>{
     it("Successful Login Functionality Verification",()=>{
 
         //Login to the HRM Demo Website with Valid Username and Password
-        cy.Login(validUsername,alidPassword,loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton);
+        cy.Login(appCredentials.validUsername,appCredentials.validPassword,loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton);
 
         //Validate the display of Username 
         cy.get(dashboardPageLocators.welcomeUserNameBanner).should("be.visible").should('have.length.greaterThan',0).click();

@@ -20,4 +20,4 @@ import './commands'
 // require('./commands')
 console.log("Support Index")
 
-require('../fixtures/appCredentials.json');
+const a=require('../fixtures/appCredentials.json');
