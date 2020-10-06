@@ -8,6 +8,7 @@ const loginPageLocators = require ('../../pageObjects/loginPageObjects.json');
 const dashboardPageLocators = require('../../pageObjects/dashboardPageObjects.json');
 const addEmployeePageLocators= require('../../pageObjects/addEmployeeObjects.json');
 const employeeListPageLocators = require ('../../pageObjects/employeeListPage.json');
+const appCredentials = require('../../fixtures/appCredentials.json');
 
 describe("Login Functionality Verification", ()=>{
 
@@ -22,7 +23,7 @@ describe("Login Functionality Verification", ()=>{
     it("Verify Add Employee Functionality",()=>{
 
         //Login to the HRM Demo Website with Valid Username and Password
-        cy.Login("Admin","admin123",loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton);
+        cy.Login(appCredentials.validUsername,appCredentials.validPassword,loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton);
 
         //Click on PIM Module
         cy.get(dashboardPageLocators.pimModule).should('be.visible').click();
