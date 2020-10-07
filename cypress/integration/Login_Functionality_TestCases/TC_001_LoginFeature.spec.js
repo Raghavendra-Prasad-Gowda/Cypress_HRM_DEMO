@@ -17,7 +17,7 @@ describe("Login Functionality Verification", ()=>{
     it("Successful Login Functionality Verification",()=>{
 
         //Login to the HRM Demo Website with Valid Username and Password
-        cy.Login(appCredentials.validUsername,appCredentials.validPassword,loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton);
+        cy.Login(appCredentials.validUsername,  appCredentials.validPassword,  loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton);
 
         //Validate the display of Username 
         cy.get(dashboardPageLocators.welcomeUserNameBanner).should("be.visible").should('have.length.greaterThan',0).click();
@@ -30,7 +30,7 @@ describe("Login Functionality Verification", ()=>{
     it("Verification of error message display upon unsuccessful login",()=>{
 
         //Login to the HRM Demo Website with Valid Username and Password
-        cy.Login(appCredentials.invalidUsername,appCredentials.invalidPassword,loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton);
+        cy.Login(appCredentials.invalidUsername, appCredentials.invalidPassword, ywaloginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton);
 
         //Verifying the error message display 
         cy.get(loginPageLocators.invalidCredentialsMessageSpan).should('be.visible').should('be.equal',"Invalid credentials");
