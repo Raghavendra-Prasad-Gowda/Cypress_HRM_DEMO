@@ -18,6 +18,3 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
-console.log("Support Index")
-
-const a=require('../fixtures/appCredentials.json');
