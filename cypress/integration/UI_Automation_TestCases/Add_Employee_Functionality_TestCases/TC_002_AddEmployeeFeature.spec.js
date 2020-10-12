@@ -1,13 +1,13 @@
 /// <reference types="Cypress" />
 
-import utilMethods from '../../utilMethods/util.js'
+import utilMethods from '../../../utilMethods/util.js'
 const utilityMethods = new utilMethods();
 
-const loginPageLocators = require ('../../pageObjects/loginPageObjects.json');
-const dashboardPageLocators = require('../../pageObjects/dashboardPageObjects.json');
-const addEmployeePageLocators= require('../../pageObjects/addEmployeeObjects.json');
-const employeeListPageLocators = require ('../../pageObjects/employeeListPage.json');
-const appCredentials = require('../../fixtures/appCredentials.json');
+const loginPageLocators = require ('../../../pageObjects/loginPageObjects.json');
+const dashboardPageLocators = require('../../../pageObjects/dashboardPageObjects.json');
+const addEmployeePageLocators= require('../../../pageObjects/addEmployeeObjects.json');
+const employeeListPageLocators = require ('../../../pageObjects/employeeListPage.json');
+const appCredentials = require('../../../fixtures/appCredentials.json');
 
 describe("Add Employee Functionality Verification", ()=>{
 

@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-const dynamicDropdownCLocators = require('../../pageObjects/dynamicDropdownPageObjects.json')
+const dynamicDropdownCLocators = require('../../../pageObjects/dynamicDropdownPageObjects.json')
 
 
 
