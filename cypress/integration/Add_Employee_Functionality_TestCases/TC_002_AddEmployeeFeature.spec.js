@@ -1,7 +1,6 @@
 /// <reference types="Cypress" />
 
 import utilMethods from '../../utilMethods/util.js'
-
 const utilityMethods = new utilMethods();
 
 const loginPageLocators = require ('../../pageObjects/loginPageObjects.json');

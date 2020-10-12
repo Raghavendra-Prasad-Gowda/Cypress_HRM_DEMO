@@ -24,24 +24,4 @@ describe("API Automation Test Cases",()=>{
     });
 
 
-    it("Loop Tester", ()=>{
-
-        cy.visit("https://google.com");
-
-
-        const words=[{searchword:"Pastman"},{searchword:"raghu"}]
-
-        cy.wrap(words).each(words=>{
-
-            cy.get("input[title='Search']").type(words.searchword);
-
-        });
-
-        
-
-
-
-    });
-
-
 })
