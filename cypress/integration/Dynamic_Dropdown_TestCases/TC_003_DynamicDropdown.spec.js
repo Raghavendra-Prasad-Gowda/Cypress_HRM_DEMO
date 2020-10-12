@@ -1,31 +1,33 @@
 /// <reference types="Cypress" />
 
+const dynamicDropdownObject = require('../../pageObjects/dynamicDropdownPageObjects.json')
+
+
+
 describe("Dynamic Dropdown Functionality Verification",()=>{
 
-    it("Booking an car service Appointment using Dynamic Dropdown",()=>{
-
+    before(()=>{
         cy.visit("https://demo.rsjoomla.com/rsformpro/form-examples/dynamic-drop-down-change-form-example.html");
+    });
 
-        
+    it("Booking an car service Appointment using Dynamic Dropdown",()=>{
         var carManufacturer="SEAT";
-        cy.get("select[id='Car Manufacturer']").select(carManufacturer);
-
+        cy.get(dynamicDropdownObject.carManufacturer).select(carManufacturer);
 
         var carModel="Leon";
-        cy.get("select[id='SEAT']").select(carModel);
+        cy.get(dynamicDropdownObject.carModel).select(carModel);
 
-        
 
         var serviceType="Repair Damaged Vehicle";
-        cy.get("select[id='Requested Service']").select(serviceType);
+        cy.get(dynamicDropdownObject.requiredService).select(serviceType);
 
-        cy.get("input[id='Submit']").click();
+        cy.get(dynamicDropdownObject.submitButton).click();
 
-        cy.get("main[id='content'] > p").should('be.visible').contains("You have requested " + serviceType +" for your "+ carManufacturer+" "+carModel);
+        cy.wait(4000);
 
-        cy.get("button[name='continue']").click();
+        cy.get(dynamicDropdownObject.appointmentMessage).should('be.visible').should('contain',"You have requested " + serviceType +" for your "+ carManufacturer+" "+carModel);
 
-
+        cy.get(dynamicDropdownObject.continueButton).click();
 
     });
 

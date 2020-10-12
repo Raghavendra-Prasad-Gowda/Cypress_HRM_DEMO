@@ -1,0 +1,11 @@
+{
+
+    "carManufacturer":"select[id='Car Manufacturer']",
+    "carModel":"select[id='SEAT']",
+    "requiredService":"select[id='Requested Service']",
+    "submitButton":"input[id='Submit']",
+    "appointmentMessage":"main[id='content'] > p",
+    "continueButton":"button[name='continue']"
+
+
+}

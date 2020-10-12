@@ -33,7 +33,7 @@ describe("Login Functionality Verification", ()=>{
         cy.Login(appCredentials.invalidUsername, appCredentials.invalidPassword, ywaloginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton);
 
         //Verifying the error message display 
-        cy.get(loginPageLocators.invalidCredentialsMessageSpan).should('be.visible').should('be.equal',"Invalid credentials");
+        cy.get(loginPageLocators.invalidCredentialsMessageSpan).should('be.visible').should('contain',"Invalid credentials");
 
     });
 

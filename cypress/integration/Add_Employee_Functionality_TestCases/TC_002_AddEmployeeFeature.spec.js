@@ -10,7 +10,7 @@ const addEmployeePageLocators= require('../../pageObjects/addEmployeeObjects.jso
 const employeeListPageLocators = require ('../../pageObjects/employeeListPage.json');
 const appCredentials = require('../../fixtures/appCredentials.json');
 
-describe("Login Functionality Verification", ()=>{
+describe("Add Employee Functionality Verification", ()=>{
 
     beforeEach(()=>{
 
@@ -73,7 +73,7 @@ describe("Login Functionality Verification", ()=>{
         cy.get(employeeListPageLocators.searchButton).should('be.visible').click();
 
         //Verifying if the Employee is added
-        cy.get(employeeListPageLocators.firstNameValueInFirstResult).should('be.visible').contains(firstName+" "+middleName);
+        cy.get(employeeListPageLocators.firstNameValueInFirstResult).should('be.visible').should('contain',firstName+" "+middleName);
 
         //Validate the display of Username 
         cy.get(dashboardPageLocators.welcomeUserNameBanner).should('be.visible').click();
