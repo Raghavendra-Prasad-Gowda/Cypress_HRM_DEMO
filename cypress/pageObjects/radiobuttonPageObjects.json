@@ -1,0 +1,5 @@
+{
+    "avatarRadioButton":"md-radio-button[aria-label='avatar 3']",
+    "ceoRadioButton":"[aria-label='Gabriel García Márquez']",
+    "fruitRadioButton":"md-radio-button[value='Apple']"
+}

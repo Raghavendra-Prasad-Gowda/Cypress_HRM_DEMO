@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-const dynamicDropdownObject = require('../../pageObjects/dynamicDropdownPageObjects.json')
+const dynamicDropdownCLocators = require('../../pageObjects/dynamicDropdownPageObjects.json')
 
 
 
@@ -12,22 +12,22 @@ describe("Dynamic Dropdown Functionality Verification",()=>{
 
     it("Booking an car service Appointment using Dynamic Dropdown",()=>{
         var carManufacturer="SEAT";
-        cy.get(dynamicDropdownObject.carManufacturer).select(carManufacturer);
+        cy.get(dynamicDropdownCLocators.carManufacturer).select(carManufacturer);
 
         var carModel="Leon";
-        cy.get(dynamicDropdownObject.carModel).select(carModel);
+        cy.get(dynamicDropdownCLocators.carModel).select(carModel);
 
 
         var serviceType="Repair Damaged Vehicle";
-        cy.get(dynamicDropdownObject.requiredService).select(serviceType);
+        cy.get(dynamicDropdownCLocators.requiredService).select(serviceType);
 
-        cy.get(dynamicDropdownObject.submitButton).click();
+        cy.get(dynamicDropdownCLocators.submitButton).click();
 
         cy.wait(4000);
 
-        cy.get(dynamicDropdownObject.appointmentMessage).should('be.visible').should('contain',"You have requested " + serviceType +" for your "+ carManufacturer+" "+carModel);
+        cy.get(dynamicDropdownCLocators.appointmentMessage).should('be.visible').should('contain',"You have requested " + serviceType +" for your "+ carManufacturer+" "+carModel);
 
-        cy.get(dynamicDropdownObject.continueButton).click();
+        cy.get(dynamicDropdownCLocators.continueButton).click();
 
     });
 
