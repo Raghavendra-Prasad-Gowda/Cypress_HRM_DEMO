@@ -1,8 +1,8 @@
 /// <reference types="Cypress" />
 
-const loginPageLocators = require ('../cypress/pageObjects/loginPageObjects.json');
-const dashboardPageLocators = require('../cypress/pageObjects/dashboardPageObjects.json');
-const appCredentials = require('../cypress/fixtures/appCredentials.json');
+const loginPageLocators = require ('../../../utilMethods/util');
+const dashboardPageLocators = require('../../../cypress/pageObjects/dashboardPageObjects.json');
+const appCredentials = require('../../../cypress/fixtures/appCredentials.json');
 
 describe("Login Functionality Verification", ()=>{
 

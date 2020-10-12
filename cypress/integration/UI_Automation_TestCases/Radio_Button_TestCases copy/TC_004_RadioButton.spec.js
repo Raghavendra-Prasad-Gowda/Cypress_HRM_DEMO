@@ -1,8 +1,8 @@
 /// <reference types="Cypress" />
 
-const radiobuttonLocators = require('../../pageObjects/radiobuttonPageObjects.json')
+const radiobuttonLocators = require('../../../pageObjects/radiobuttonPageObjects.json')
 
-import utilMethods from '../../utilMethods/util.js'
+import utilMethods from '../../../utilMethods/util'
 const utilityMethods = new utilMethods();
 
 describe("Radio Button Actions",()=>{
