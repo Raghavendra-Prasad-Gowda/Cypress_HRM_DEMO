@@ -2,14 +2,20 @@
 
 const loginPageLocators = require ('../../../pageObjects/loginPageObjects.json');
 const dashboardPageLocators = require('../../../pageObjects/dashboardPageObjects.json');
-const appCredentials = require('../../../fixtures/appCredentials.json');
+//const appCredentials = require('../../../fixtures/appCredentials.json');
 
 describe("Login Functionality Verification", ()=>{
 
     beforeEach(()=>{
 
+        let userDetails;
+
         //Open the Home Page URL of HRM Website
         cy.visit("/");
+
+        cy.fixture('appCredentials').then((userValues)=>{
+            userDetails=userValues;
+        });
 
     });
 
@@ -17,7 +23,7 @@ describe("Login Functionality Verification", ()=>{
     it("Successful Login Functionality Verification",()=>{
 
         //Login to the HRM Demo Website with Valid Username and Password
-        cy.Login(appCredentials.validUsername,  appCredentials.validPassword,  loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton);
+        cy.Login(userDetails.validUsername,  userDetails.validPassword,  loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton);
 
         //Validate the display of Username 
         cy.get(dashboardPageLocators.welcomeUserNameBanner).should("be.visible").should('have.length.greaterThan',0).click();
@@ -30,7 +36,7 @@ describe("Login Functionality Verification", ()=>{
     it("Verification of error message display upon unsuccessful login",()=>{
 
         //Login to the HRM Demo Website with Valid Username and Password
-        cy.Login(appCredentials.invalidUsername, appCredentials.invalidPassword, loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton);
+        cy.Login(userDetails.invalidUsername, userDetails.invalidPassword, loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton);
 
         //Verifying the error message display 
         cy.get(loginPageLocators.invalidCredentialsMessageSpan).should('be.visible').should('contain',"Invalid credentials");

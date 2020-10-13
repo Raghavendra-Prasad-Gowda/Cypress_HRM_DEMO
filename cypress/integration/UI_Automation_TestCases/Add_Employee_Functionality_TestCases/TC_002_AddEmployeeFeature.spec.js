@@ -7,14 +7,20 @@ const loginPageLocators = require ('../../../pageObjects/loginPageObjects.json')
 const dashboardPageLocators = require('../../../pageObjects/dashboardPageObjects.json');
 const addEmployeePageLocators= require('../../../pageObjects/addEmployeeObjects.json');
 const employeeListPageLocators = require ('../../../pageObjects/employeeListPage.json');
-const appCredentials = require('../../../fixtures/appCredentials.json');
+
 
 describe("Add Employee Functionality Verification", ()=>{
 
     beforeEach(()=>{
 
+        let userDetails;
+
         //Open the Home Page URL of HRM Website
         cy.visit("/");
+
+        cy.fixture('appCredentials').then((userValues)=>{
+            userDetails=userValues;
+        });
 
     });
 
@@ -22,7 +28,7 @@ describe("Add Employee Functionality Verification", ()=>{
     it("Verify Add Employee Functionality",()=>{
 
         //Login to the HRM Demo Website with Valid Username and Password
-        cy.Login(appCredentials.validUsername,appCredentials.validPassword,loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton);
+        cy.Login(userDetails.validUsername, userDetails.validPassword,loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton);
 
         //Click on PIM Module
         cy.get(dashboardPageLocators.pimModule).should('be.visible').click();
