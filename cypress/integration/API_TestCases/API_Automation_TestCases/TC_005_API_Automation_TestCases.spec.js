@@ -5,8 +5,8 @@ const utilityMethods = new utilMethods();
 
 describe("API Automation Test Cases",()=>{
 
-    //Base URL of the API
-    let baseUrlApi="https://reqres.in";
+    //Setting Base URL for API Test Cases
+    Cypress.config('baseUrl','https://reqres.in/');
 
     //Random Username for Validating APi Response
     let userName=utilityMethods.randomString(4,"lowerCase");
@@ -17,7 +17,7 @@ describe("API Automation Test Cases",()=>{
     it("GET Request to fetch the list of users",()=>{
 
         //Fetching the List of Users
-        cy.request('GET',baseUrlApi+"/api/users").then((response)=>{
+        cy.request('GET',"api/users").then((response)=>{
             //Validating the Response Status
             expect(response.status).equal(200);
 
@@ -40,7 +40,7 @@ describe("API Automation Test Cases",()=>{
             "job": jobTitle
         }
 
-        cy.request('POST', baseUrlApi+"/api/users",newUser).then((response)=>{
+        cy.request('POST', "api/users",newUser).then((response)=>{
             expect(response.status).equal(201);
             expect(response.body.name).equal(userName);
             userID=response.body.id;
@@ -59,7 +59,7 @@ describe("API Automation Test Cases",()=>{
             "job": newJobTitle
         }
 
-        cy.request('PUT', baseUrlApi+"/api/users",existingUser).then((response)=>{
+        cy.request('PUT',"api/users",existingUser).then((response)=>{
             expect(response.status).equal(200);
             expect(response.body.name).equal(userName);
             expect(response.body.job).equal(newJobTitle);
@@ -72,7 +72,7 @@ describe("API Automation Test Cases",()=>{
 
      it("DELETE Request to deleted the created user", ()=>{
 
-        cy.request('DELETE', baseUrlApi+"/api/users/"+userID).then((response)=>{
+        cy.request('DELETE',"api/users/"+userID).then((response)=>{
             expect(response.status).equal(204);       
         });
         
