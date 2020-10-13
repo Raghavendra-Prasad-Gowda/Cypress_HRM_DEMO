@@ -6,9 +6,8 @@ const dashboardPageLocators = require('../../../pageObjects/dashboardPageObjects
 
 describe("Login Functionality Verification", ()=>{
 
+    let userDetails;
     beforeEach(()=>{
-
-        let userDetails;
 
         //Open the Home Page URL of HRM Website
         cy.visit("/");

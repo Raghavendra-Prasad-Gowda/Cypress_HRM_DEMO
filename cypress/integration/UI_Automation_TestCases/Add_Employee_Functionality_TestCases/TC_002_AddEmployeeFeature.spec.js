@@ -11,10 +11,9 @@ const employeeListPageLocators = require ('../../../pageObjects/employeeListPage
 
 describe("Add Employee Functionality Verification", ()=>{
 
+    let userDetails;
     beforeEach(()=>{
-
-        let userDetails;
-
+        
         //Open the Home Page URL of HRM Website
         cy.visit("/");
 
