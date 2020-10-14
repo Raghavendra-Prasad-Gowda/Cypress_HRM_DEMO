@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-10-14T10:10:53.998Z",
+    "end": "2020-10-14T10:11:43.039Z",
+    "duration": 49041,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "64a03c62-f6d8-4a74-8a59-5408ecacff7d",
+      "title": "",
+      "fullFile": "cypress\\integration\\UI_Automation_TestCases\\Add_Employee_Functionality_TestCases\\TC_002_AddEmployeeFeature.spec.js",
+      "file": "cypress\\integration\\UI_Automation_TestCases\\Add_Employee_Functionality_TestCases\\TC_002_AddEmployeeFeature.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "47118637-2861-4d83-8cc2-53d12d7724f9",
+          "title": "Add Employee Functionality Verification",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify Add Employee Functionality",
+              "fullTitle": "Add Employee Functionality Verification Verify Add Employee Functionality",
+              "timedOut": null,
+              "duration": 48902,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Login to the HRM Demo Website with Valid Username and Password\ncy.Login(userDetails.validUsername, userDetails.validPassword, loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton); //Click on PIM Module\ncy.get(dashboardPageLocators.pimModule).should('be.visible').click(); //Click on Add Employee Tab\ncy.get(addEmployeePageLocators.addEmployeeTab).click({\n  force: true\n}); //Enter FirstName\nvar firstName = utilityMethods.randomString(6, \"lowerCase\");\ncy.get(addEmployeePageLocators.firstNameTextbox).type(firstName); //Enter Middle Name\nvar middleName = utilityMethods.randomString(6, \"lowerCase\");\ncy.get(addEmployeePageLocators.middleNameTextbox).type(middleName); //Enter Last Name\ncy.get(addEmployeePageLocators.lastNameTextbox).type(utilityMethods.randomString(6, \"lowerCase\")); //Select CreateLogin Check Box\ncy.get(addEmployeePageLocators.createLoginCheckbox).check(); //Enter Username\ncy.get(addEmployeePageLocators.userNameTextbox).type(utilityMethods.randomString(6, \"lowerCase\")); //Enter Password\nvar password = utilityMethods.randomString(9, \"alphaNumeric\");\ncy.get(addEmployeePageLocators.passwordTextbox).type(password); //Retype the Password\ncy.get(addEmployeePageLocators.confirmPasswordTextbox).type(password); //Select the Status Value from Dropdown\ncy.get(addEmployeePageLocators.statusDropdown).select(\"Enabled\"); //Click on Save Button\ncy.get(addEmployeePageLocators.saveButton).should('be.visible').click();\ncy.get(dashboardPageLocators.pimModule).should('be.visible').click(); //Click on Employee List\ncy.get(employeeListPageLocators.employeeListTab).click({\n  force: true\n}); //Enter the First Name in Employee SearchTextBox\ncy.wait(5000);\ncy.get(employeeListPageLocators.employeeNameSearchTextbox).type(firstName); //Click on Search Button\ncy.get(employeeListPageLocators.searchButton).should('be.visible').click(); //Verifying if the Employee is added\ncy.get(employeeListPageLocators.firstNameValueInFirstResult).should('be.visible').should('contain', firstName + \" \" + middleName); //Validate the display of Username \ncy.get(dashboardPageLocators.welcomeUserNameBanner).should('be.visible').click(); //Click on Logout button\ncy.get(dashboardPageLocators.logoutButton).click();",
+              "err": {},
+              "uuid": "39e655ec-3e9b-488f-972e-5ee1eaa3caef",
+              "parentUUID": "47118637-2861-4d83-8cc2-53d12d7724f9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "39e655ec-3e9b-488f-972e-5ee1eaa3caef"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 48902,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/specs",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

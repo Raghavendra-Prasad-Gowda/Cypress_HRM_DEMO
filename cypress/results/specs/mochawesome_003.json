@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-10-14T10:12:26.943Z",
+    "end": "2020-10-14T10:12:48.404Z",
+    "duration": 21461,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7baab15f-0006-4c4e-97f9-a91e35a69ad9",
+      "title": "",
+      "fullFile": "cypress\\integration\\UI_Automation_TestCases\\Login_Functionality_TestCases\\TC_001_LoginFeature.spec.js",
+      "file": "cypress\\integration\\UI_Automation_TestCases\\Login_Functionality_TestCases\\TC_001_LoginFeature.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "aae2e50a-4416-46a8-9839-95b70f93b7a7",
+          "title": "Login Functionality Verification",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Successful Login Functionality Verification",
+              "fullTitle": "Login Functionality Verification Successful Login Functionality Verification",
+              "timedOut": null,
+              "duration": 13009,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Login to the HRM Demo Website with Valid Username and Password\ncy.Login(userDetails.validUsername, userDetails.validPassword, loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton); //Validate the display of Username \ncy.get(dashboardPageLocators.welcomeUserNameBanner).should(\"be.visible\").should('have.length.greaterThan', 0).click(); //Click on Logout button\ncy.get(dashboardPageLocators.logoutButton).click();",
+              "err": {},
+              "uuid": "f1c52825-9253-4ebd-aa28-d621a0da9b46",
+              "parentUUID": "aae2e50a-4416-46a8-9839-95b70f93b7a7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verification of error message display upon unsuccessful login",
+              "fullTitle": "Login Functionality Verification Verification of error message display upon unsuccessful login",
+              "timedOut": null,
+              "duration": 8150,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  \"D:\\\\POC_Github_Integration\\\\Cypress_HRM_DEMO\\\\cypress\\\\results\\\\assets/UI_Automation_TestCases\\\\Login_Functionality_TestCases\\\\TC_001_LoginFeature.spec.js/Login Functionality Verification -- Verification of error message display upon unsuccessful login (failed).png\",\n  \"../videos/UI_Automation_TestCases\\\\Login_Functionality_TestCases\\\\TC_001_LoginFeature.spec.js.mp4\"\n]",
+              "code": "//Login to the HRM Demo Website with Valid Username and Password\ncy.Login(userDetails.invalidUsername, userDetails.invalidPassword, loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton); //Verifying the error message display \ncy.get(loginPageLocators.invalidCredentialsMessageSpan).should('be.visible').should('contain', \"Tester\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying: expected '<span#spanMessage>' to contain 'Tester'",
+                "estack": "AssertionError: Timed out retrying: expected '<span#spanMessage>' to contain 'Tester'\n    at Context.eval (https://opensource-demo.orangehrmlive.com/__cypress/tests?p=cypress\\integration\\UI_Automation_TestCases\\Login_Functionality_TestCases\\TC_001_LoginFeature.spec.js:126:82)",
+                "diff": null
+              },
+              "uuid": "bccca7f5-2cdc-4d54-b446-d90273bf1da8",
+              "parentUUID": "aae2e50a-4416-46a8-9839-95b70f93b7a7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f1c52825-9253-4ebd-aa28-d621a0da9b46"
+          ],
+          "failures": [
+            "bccca7f5-2cdc-4d54-b446-d90273bf1da8"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 21159,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/specs",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

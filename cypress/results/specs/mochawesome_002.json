@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-10-14T10:11:56.925Z",
+    "end": "2020-10-14T10:12:16.836Z",
+    "duration": 19911,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6c8b9ccc-50f5-4220-b41d-a7d133530d6e",
+      "title": "",
+      "fullFile": "cypress\\integration\\UI_Automation_TestCases\\Dynamic_Dropdown_TestCases\\TC_003_DynamicDropdown.spec.js",
+      "file": "cypress\\integration\\UI_Automation_TestCases\\Dynamic_Dropdown_TestCases\\TC_003_DynamicDropdown.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cb1d0935-0b94-46d0-9840-d3b608882139",
+          "title": "Dynamic Dropdown Functionality Verification",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Booking an car service Appointment using Dynamic Dropdown",
+              "fullTitle": "Dynamic Dropdown Functionality Verification Booking an car service Appointment using Dynamic Dropdown",
+              "timedOut": null,
+              "duration": 14758,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var carManufacturer = \"SEAT\";\ncy.get(dynamicDropdownCLocators.carManufacturer).select(carManufacturer);\nvar carModel = \"Leon\";\ncy.get(dynamicDropdownCLocators.carModel).select(carModel);\nvar serviceType = \"Repair Damaged Vehicle\";\ncy.get(dynamicDropdownCLocators.requiredService).select(serviceType);\ncy.get(dynamicDropdownCLocators.submitButton).click();\ncy.wait(4000);\ncy.get(dynamicDropdownCLocators.appointmentMessage).should('be.visible').should('contain', \"You have requested \" + serviceType + \" for your \" + carManufacturer + \" \" + carModel);\ncy.get(dynamicDropdownCLocators.continueButton).click();",
+              "err": {},
+              "uuid": "b6ea33ae-3eea-416e-8a1f-6536e385d899",
+              "parentUUID": "cb1d0935-0b94-46d0-9840-d3b608882139",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b6ea33ae-3eea-416e-8a1f-6536e385d899"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14758,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/specs",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
