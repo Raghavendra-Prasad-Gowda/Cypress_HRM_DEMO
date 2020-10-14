@@ -20,7 +20,7 @@ describe("Login Functionality Verification", ()=>{
     });
 
 
-    it.skip("Successful Login Functionality Verification",()=>{
+    it("Successful Login Functionality Verification",()=>{
 
         //Login to the HRM Demo Website with Valid Username and Password
         cy.Login(userDetails.validUsername,  userDetails.validPassword,  loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton);

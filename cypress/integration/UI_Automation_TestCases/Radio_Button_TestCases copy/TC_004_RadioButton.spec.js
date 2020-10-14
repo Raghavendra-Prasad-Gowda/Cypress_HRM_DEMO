@@ -53,7 +53,7 @@ describe("Radio Button Actions",()=>{
         cy.get(radiobuttonLocators.submitButton).click()
         
         //Validating the Success Message of the form
-        cy.get(radiobuttonLocators.successMessageHeader).should('contain','Thanks for submitting the form');
+        cy.get(radiobuttonLocators.successMessageHeader).should('contain','Successful');
 
         //Closing the Popup Window
         cy.get(radiobuttonLocators.closeButton).click();
