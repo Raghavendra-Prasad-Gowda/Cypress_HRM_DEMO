@@ -1,4 +1,14 @@
 {
   "baseUrl": "https://opensource-demo.orangehrmlive.com",
-  "projectId": "t9vv4m"
+  "projectId": "t9vv4m",
+  
+  "reporter": "mochawesome",
+    "reporterOptions": {
+      "reportDir": "cypress/results/specs",
+      "overwrite": false,
+      "html": false,
+      "json": true
+    },
+
+  "screenshotsFolder":"cypress/results/assets"
 }

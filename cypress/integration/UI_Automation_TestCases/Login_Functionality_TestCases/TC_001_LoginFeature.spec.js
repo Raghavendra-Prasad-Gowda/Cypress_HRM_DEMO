@@ -7,6 +7,7 @@ const dashboardPageLocators = require('../../../pageObjects/dashboardPageObjects
 describe("Login Functionality Verification", ()=>{
 
     let userDetails;
+
     beforeEach(()=>{
 
         //Open the Home Page URL of HRM Website
@@ -19,7 +20,7 @@ describe("Login Functionality Verification", ()=>{
     });
 
 
-    it("Successful Login Functionality Verification",()=>{
+    it.skip("Successful Login Functionality Verification",()=>{
 
         //Login to the HRM Demo Website with Valid Username and Password
         cy.Login(userDetails.validUsername,  userDetails.validPassword,  loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton);
@@ -38,7 +39,7 @@ describe("Login Functionality Verification", ()=>{
         cy.Login(userDetails.invalidUsername, userDetails.invalidPassword, loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton);
 
         //Verifying the error message display 
-        cy.get(loginPageLocators.invalidCredentialsMessageSpan).should('be.visible').should('contain',"Invalid credentials");
+        cy.get(loginPageLocators.invalidCredentialsMessageSpan).should('be.visible').should('contain',"Tester");
 
     });
 
