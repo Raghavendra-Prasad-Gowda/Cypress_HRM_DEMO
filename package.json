@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "cypress:tests": "node_modules/.bin/cypress run",
+    "cypress:open": "node_modules/.bin/cypress open",
     "Logintest":"cypress run --spec cypress/integration/UI_Automation_TestCases/Login_Functionality_TestCases/TC_001_LoginFeature.spec.js",
     "merge:reports": "mochawesome-merge 'cypress/results/specs/*.json' > cypress/results/mochawesome.json",
     "generate:report": "marge cypress/results/mochawesome.json --reportDir cypress/results --reportFilename index.html",
