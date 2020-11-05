@@ -1,15 +1,15 @@
 {
   "stats": {
-    "suites": 5,
-    "tests": 9,
-    "passes": 7,
+    "suites": 4,
+    "tests": 5,
+    "passes": 4,
     "pending": 0,
-    "failures": 2,
-    "start": "2020-10-14T10:10:42.491Z",
-    "end": "2020-10-14T10:13:20.463Z",
-    "duration": 105728,
-    "testsRegistered": 9,
-    "passPercent": 77.77777777777777,
+    "failures": 1,
+    "start": "2020-10-21T11:32:48.500Z",
+    "end": "2020-10-21T11:34:44.407Z",
+    "duration": 85694,
+    "testsRegistered": 5,
+    "passPercent": 80,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,49 +18,49 @@
   },
   "results": [
     {
-      "uuid": "64a03c62-f6d8-4a74-8a59-5408ecacff7d",
+      "uuid": "6027f318-e206-494c-8e48-1f3e31ad7f33",
       "title": "",
-      "fullFile": "cypress\\integration\\UI_Automation_TestCases\\Add_Employee_Functionality_TestCases\\TC_002_AddEmployeeFeature.spec.js",
-      "file": "cypress\\integration\\UI_Automation_TestCases\\Add_Employee_Functionality_TestCases\\TC_002_AddEmployeeFeature.spec.js",
+      "fullFile": "cypress\\integration\\UI_Automation_TestCases\\Apply_Employee_Functionality_TestCases\\TC_004_ApplyLeaveFeature.spec.js",
+      "file": "cypress\\integration\\UI_Automation_TestCases\\Apply_Employee_Functionality_TestCases\\TC_004_ApplyLeaveFeature.spec.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "47118637-2861-4d83-8cc2-53d12d7724f9",
-          "title": "Add Employee Functionality Verification",
+          "uuid": "05edf23c-908d-481f-a5a5-caa248d54b10",
+          "title": "Apply Leave Functionality of HRM Site",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "Verify Add Employee Functionality",
-              "fullTitle": "Add Employee Functionality Verification Verify Add Employee Functionality",
+              "title": "Verify Apply Leave Functionality",
+              "fullTitle": "Apply Leave Functionality of HRM Site Verify Apply Leave Functionality",
               "timedOut": null,
-              "duration": 48902,
+              "duration": 18694,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "//Login to the HRM Demo Website with Valid Username and Password\ncy.Login(userDetails.validUsername, userDetails.validPassword, loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton); //Click on PIM Module\ncy.get(dashboardPageLocators.pimModule).should('be.visible').click(); //Click on Add Employee Tab\ncy.get(addEmployeePageLocators.addEmployeeTab).click({\n  force: true\n}); //Enter FirstName\nvar firstName = utilityMethods.randomString(6, \"lowerCase\");\ncy.get(addEmployeePageLocators.firstNameTextbox).type(firstName); //Enter Middle Name\nvar middleName = utilityMethods.randomString(6, \"lowerCase\");\ncy.get(addEmployeePageLocators.middleNameTextbox).type(middleName); //Enter Last Name\ncy.get(addEmployeePageLocators.lastNameTextbox).type(utilityMethods.randomString(6, \"lowerCase\")); //Select CreateLogin Check Box\ncy.get(addEmployeePageLocators.createLoginCheckbox).check(); //Enter Username\ncy.get(addEmployeePageLocators.userNameTextbox).type(utilityMethods.randomString(6, \"lowerCase\")); //Enter Password\nvar password = utilityMethods.randomString(9, \"alphaNumeric\");\ncy.get(addEmployeePageLocators.passwordTextbox).type(password); //Retype the Password\ncy.get(addEmployeePageLocators.confirmPasswordTextbox).type(password); //Select the Status Value from Dropdown\ncy.get(addEmployeePageLocators.statusDropdown).select(\"Enabled\"); //Click on Save Button\ncy.get(addEmployeePageLocators.saveButton).should('be.visible').click();\ncy.get(dashboardPageLocators.pimModule).should('be.visible').click(); //Click on Employee List\ncy.get(employeeListPageLocators.employeeListTab).click({\n  force: true\n}); //Enter the First Name in Employee SearchTextBox\ncy.wait(5000);\ncy.get(employeeListPageLocators.employeeNameSearchTextbox).type(firstName); //Click on Search Button\ncy.get(employeeListPageLocators.searchButton).should('be.visible').click(); //Verifying if the Employee is added\ncy.get(employeeListPageLocators.firstNameValueInFirstResult).should('be.visible').should('contain', firstName + \" \" + middleName); //Validate the display of Username \ncy.get(dashboardPageLocators.welcomeUserNameBanner).should('be.visible').click(); //Click on Logout button\ncy.get(dashboardPageLocators.logoutButton).click();",
+              "code": "cy.get(dashboardPageLocators.leaveModule).should('be.visible').click();\ncy.get(applyLeavePageLocators.applyTab).click({\n  force: true\n});\ncy.get(applyLeavePageLocators.leaveType).select('US - Personal');\nvar leaveDate = '2020-10-26';\ncy.get(applyLeavePageLocators.fromDate).clear().type(leaveDate);\ncy.get(applyLeavePageLocators.toDate).clear({\n  force: true\n}).type(leaveDate);\ncy.get(applyLeavePageLocators.commentsTextBox).click({\n  force: true\n}).type('Leave Apply Testing');\ncy.get(applyLeavePageLocators.applyButton).click();",
               "err": {},
-              "uuid": "39e655ec-3e9b-488f-972e-5ee1eaa3caef",
-              "parentUUID": "47118637-2861-4d83-8cc2-53d12d7724f9",
+              "uuid": "3ef93f72-3fd2-4b7a-ab26-df91af5eb22f",
+              "parentUUID": "05edf23c-908d-481f-a5a5-caa248d54b10",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "39e655ec-3e9b-488f-972e-5ee1eaa3caef"
+            "3ef93f72-3fd2-4b7a-ab26-df91af5eb22f"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 48902,
+          "duration": 18694,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -76,49 +76,49 @@
       "_timeout": 2000
     },
     {
-      "uuid": "6c8b9ccc-50f5-4220-b41d-a7d133530d6e",
+      "uuid": "8b0d381e-a05a-4594-9741-50c45b4b76d9",
       "title": "",
-      "fullFile": "cypress\\integration\\UI_Automation_TestCases\\Dynamic_Dropdown_TestCases\\TC_003_DynamicDropdown.spec.js",
-      "file": "cypress\\integration\\UI_Automation_TestCases\\Dynamic_Dropdown_TestCases\\TC_003_DynamicDropdown.spec.js",
+      "fullFile": "cypress\\integration\\UI_Automation_TestCases\\Delete_Employee_Functionality_TestCases\\TC_003_DeleteEmployeeFeature.spec.js",
+      "file": "cypress\\integration\\UI_Automation_TestCases\\Delete_Employee_Functionality_TestCases\\TC_003_DeleteEmployeeFeature.spec.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "cb1d0935-0b94-46d0-9840-d3b608882139",
-          "title": "Dynamic Dropdown Functionality Verification",
+          "uuid": "e8668053-d408-467b-8334-242b3c178a62",
+          "title": "Delete Employee Functionality of HRM Site",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "Booking an car service Appointment using Dynamic Dropdown",
-              "fullTitle": "Dynamic Dropdown Functionality Verification Booking an car service Appointment using Dynamic Dropdown",
+              "title": "Verify Delete Employee Functionality",
+              "fullTitle": "Delete Employee Functionality of HRM Site Verify Delete Employee Functionality",
               "timedOut": null,
-              "duration": 14758,
+              "duration": 17533,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "var carManufacturer = \"SEAT\";\ncy.get(dynamicDropdownCLocators.carManufacturer).select(carManufacturer);\nvar carModel = \"Leon\";\ncy.get(dynamicDropdownCLocators.carModel).select(carModel);\nvar serviceType = \"Repair Damaged Vehicle\";\ncy.get(dynamicDropdownCLocators.requiredService).select(serviceType);\ncy.get(dynamicDropdownCLocators.submitButton).click();\ncy.wait(4000);\ncy.get(dynamicDropdownCLocators.appointmentMessage).should('be.visible').should('contain', \"You have requested \" + serviceType + \" for your \" + carManufacturer + \" \" + carModel);\ncy.get(dynamicDropdownCLocators.continueButton).click();",
+              "code": "cy.get(dashboardPageLocators.pimModule).click();\ncy.get(dashboardPageLocators.employeeListTab).click({\n  force: true\n});\ncy.wait(2000);\ncy.get(employeeListPageLocators.employeeNameSearchTextbox).type(\"John Sam\");\ncy.get(employeeListPageLocators.searchButton).click();\ncy.get(deleteEmployeePageLocators.selectAllCheckbox).click();\ncy.get(deleteEmployeePageLocators.deleteButton).click();\ncy.get(deleteEmployeePageLocators.dialogOKButton).click();",
               "err": {},
-              "uuid": "b6ea33ae-3eea-416e-8a1f-6536e385d899",
-              "parentUUID": "cb1d0935-0b94-46d0-9840-d3b608882139",
+              "uuid": "a5901082-2abc-4592-8852-7382337d802e",
+              "parentUUID": "e8668053-d408-467b-8334-242b3c178a62",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "b6ea33ae-3eea-416e-8a1f-6536e385d899"
+            "a5901082-2abc-4592-8852-7382337d802e"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 14758,
+          "duration": 17533,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -134,7 +134,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "7baab15f-0006-4c4e-97f9-a91e35a69ad9",
+      "uuid": "bfab2ee6-1738-4501-86d7-0953e7a80a3a",
       "title": "",
       "fullFile": "cypress\\integration\\UI_Automation_TestCases\\Login_Functionality_TestCases\\TC_001_LoginFeature.spec.js",
       "file": "cypress\\integration\\UI_Automation_TestCases\\Login_Functionality_TestCases\\TC_001_LoginFeature.spec.js",
@@ -143,8 +143,8 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "aae2e50a-4416-46a8-9839-95b70f93b7a7",
-          "title": "Login Functionality Verification",
+          "uuid": "90ee79cd-9c93-431f-9301-c00b3cbc628c",
+          "title": "Login Functionality of HRM Site",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
@@ -152,55 +152,55 @@
           "tests": [
             {
               "title": "Successful Login Functionality Verification",
-              "fullTitle": "Login Functionality Verification Successful Login Functionality Verification",
+              "fullTitle": "Login Functionality of HRM Site Successful Login Functionality Verification",
               "timedOut": null,
-              "duration": 13009,
+              "duration": 12582,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "//Login to the HRM Demo Website with Valid Username and Password\ncy.Login(userDetails.validUsername, userDetails.validPassword, loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton); //Validate the display of Username \ncy.get(dashboardPageLocators.welcomeUserNameBanner).should(\"be.visible\").should('have.length.greaterThan', 0).click(); //Click on Logout button\ncy.get(dashboardPageLocators.logoutButton).click();",
+              "code": "cy.Login(appCredentials.validUsername, appCredentials.validPassword);\ncy.get(dashboardPageLocators.welcomeUserNameBanner).should(\"be.visible\").should('have.length.greaterThan', 0).click();\ncy.get(dashboardPageLocators.logoutButton).click();",
               "err": {},
-              "uuid": "f1c52825-9253-4ebd-aa28-d621a0da9b46",
-              "parentUUID": "aae2e50a-4416-46a8-9839-95b70f93b7a7",
+              "uuid": "49896aa8-9722-4aa4-8328-79462543792c",
+              "parentUUID": "90ee79cd-9c93-431f-9301-c00b3cbc628c",
               "isHook": false,
               "skipped": false
             },
             {
               "title": "Verification of error message display upon unsuccessful login",
-              "fullTitle": "Login Functionality Verification Verification of error message display upon unsuccessful login",
+              "fullTitle": "Login Functionality of HRM Site Verification of error message display upon unsuccessful login",
               "timedOut": null,
-              "duration": 8150,
+              "duration": 8829,
               "state": "failed",
               "speed": null,
               "pass": false,
               "fail": true,
               "pending": false,
-              "context": "[\n  \"D:\\\\POC_Github_Integration\\\\Cypress_HRM_DEMO\\\\cypress\\\\results\\\\assets/UI_Automation_TestCases\\\\Login_Functionality_TestCases\\\\TC_001_LoginFeature.spec.js/Login Functionality Verification -- Verification of error message display upon unsuccessful login (failed).png\",\n  \"../videos/UI_Automation_TestCases\\\\Login_Functionality_TestCases\\\\TC_001_LoginFeature.spec.js.mp4\"\n]",
-              "code": "//Login to the HRM Demo Website with Valid Username and Password\ncy.Login(userDetails.invalidUsername, userDetails.invalidPassword, loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton); //Verifying the error message display \ncy.get(loginPageLocators.invalidCredentialsMessageSpan).should('be.visible').should('contain', \"Tester\");",
+              "context": "[\n  \"D:\\\\Gauge_Cypress Projects\\\\Cypress_HRM_DEMO\\\\cypress\\\\results\\\\assets/UI_Automation_TestCases\\\\Login_Functionality_TestCases\\\\TC_001_LoginFeature.spec.js/Login Functionality of HRM Site -- Verification of error message display upon unsuccessful login (failed).png\",\n  \"../videos/UI_Automation_TestCases\\\\Login_Functionality_TestCases\\\\TC_001_LoginFeature.spec.js.mp4\"\n]",
+              "code": "cy.Login(appCredentials.invalidUsername, appCredentials.invalidPassword);\ncy.get(loginPageLocators.invalidCredentialsMessageSpan).should('be.visible').should('contain', \"Tester\");",
               "err": {
                 "message": "AssertionError: Timed out retrying: expected '<span#spanMessage>' to contain 'Tester'",
-                "estack": "AssertionError: Timed out retrying: expected '<span#spanMessage>' to contain 'Tester'\n    at Context.eval (https://opensource-demo.orangehrmlive.com/__cypress/tests?p=cypress\\integration\\UI_Automation_TestCases\\Login_Functionality_TestCases\\TC_001_LoginFeature.spec.js:126:82)",
+                "estack": "AssertionError: Timed out retrying: expected '<span#spanMessage>' to contain 'Tester'\n    at Context.eval (https://opensource-demo.orangehrmlive.com/__cypress/tests?p=cypress\\integration\\UI_Automation_TestCases\\Login_Functionality_TestCases\\TC_001_LoginFeature.spec.js:128:82)",
                 "diff": null
               },
-              "uuid": "bccca7f5-2cdc-4d54-b446-d90273bf1da8",
-              "parentUUID": "aae2e50a-4416-46a8-9839-95b70f93b7a7",
+              "uuid": "cadf4536-2391-44ce-a7e2-23ea09a8c40c",
+              "parentUUID": "90ee79cd-9c93-431f-9301-c00b3cbc628c",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "f1c52825-9253-4ebd-aa28-d621a0da9b46"
+            "49896aa8-9722-4aa4-8328-79462543792c"
           ],
           "failures": [
-            "bccca7f5-2cdc-4d54-b446-d90273bf1da8"
+            "cadf4536-2391-44ce-a7e2-23ea09a8c40c"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 21159,
+          "duration": 21411,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -216,168 +216,49 @@
       "_timeout": 2000
     },
     {
-      "uuid": "58a88155-5cfb-4073-ac91-d14b41e9b938",
+      "uuid": "f8625a94-d339-4b54-91d8-97b5b8b290d6",
       "title": "",
-      "fullFile": "cypress\\integration\\UI_Automation_TestCases\\Radio_Button_TestCases copy\\TC_004_RadioButton.spec.js",
-      "file": "cypress\\integration\\UI_Automation_TestCases\\Radio_Button_TestCases copy\\TC_004_RadioButton.spec.js",
+      "fullFile": "cypress\\integration\\UI_Automation_TestCases\\Add_Employee_Functionality_TestCases\\TC_002_AddEmployeeFeature.spec.js",
+      "file": "cypress\\integration\\UI_Automation_TestCases\\Add_Employee_Functionality_TestCases\\TC_002_AddEmployeeFeature.spec.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "2a0d2845-21bd-497d-937e-9661868f2be9",
-          "title": "Radio Button Actions",
+          "uuid": "a04b3dca-0963-4ab9-bb10-b5a2a8962649",
+          "title": "Add Employee Functionality of HRM Site",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "Clicking on Radio button",
-              "fullTitle": "Radio Button Actions Clicking on Radio button",
+              "title": "Verify Add Employee Functionality",
+              "fullTitle": "Add Employee Functionality of HRM Site Verify Add Employee Functionality",
               "timedOut": null,
-              "duration": 17593,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
-              "pending": false,
-              "context": "[\n  \"D:\\\\POC_Github_Integration\\\\Cypress_HRM_DEMO\\\\cypress\\\\results\\\\assets/UI_Automation_TestCases\\\\Radio_Button_TestCases copy\\\\TC_004_RadioButton.spec.js/Radio Button Actions -- Clicking on Radio button (failed).png\",\n  \"../videos/UI_Automation_TestCases\\\\Radio_Button_TestCases copy\\\\TC_004_RadioButton.spec.js.mp4\"\n]",
-              "code": "//Filling the form with all the feilds\ncy.get(radiobuttonLocators.firstNameTextbox).type(utilityMethods.randomString(\"5\", \"lowerCase\"));\ncy.get(radiobuttonLocators.lastNameTextbox).type(utilityMethods.randomString(\"8\", \"upperCase\"));\ncy.get(radiobuttonLocators.userEmailTextbox).type(utilityMethods.randomString(\"4\", \"lowerCase\") + '@gmail.com');\ncy.get(radiobuttonLocators.maleRadiobutton).click();\ncy.get(radiobuttonLocators.userNumberTextbox).type(utilityMethods.randomString(\"10\", \"numeric\"));\ncy.get(radiobuttonLocators.dateOfBirthTextbox).click();\ncy.get(radiobuttonLocators.monthSelectorDropdown).select('February');\ncy.get(radiobuttonLocators.yearSelectorDropdown).select('1994');\ncy.get(radiobuttonLocators.dateValue).click();\nvar subjects = [\"Maths\", \"Physics\"];\nfor (var i = 0; i < subjects.length; i++) {\n  cy.get(radiobuttonLocators.subjectTextbox).type(subjects[i] + \"{enter}\");\n}\ncy.get(radiobuttonLocators.hobbiesCheckbox).click();\ncy.get(radiobuttonLocators.addressTextbox).type(utilityMethods.randomString(\"8\", \"lowerCase\"));\ncy.get(radiobuttonLocators.stateDropdown).type('Rajas{enter}');\ncy.get(radiobuttonLocators.cityDropdown).type('Jai{enter}'); //Submitting the Filled form\ncy.get(radiobuttonLocators.submitButton).click(); //Validating the Success Message of the form\ncy.get(radiobuttonLocators.successMessageHeader).should('contain', 'Successful'); //Closing the Popup Window\ncy.get(radiobuttonLocators.closeButton).click();",
-              "err": {
-                "message": "AssertionError: Timed out retrying: expected '<div.modal-header>' to contain 'Successful'",
-                "estack": "AssertionError: Timed out retrying: expected '<div.modal-header>' to contain 'Successful'\n    at Context.eval (eval at <anonymous> (https://www.demoqa.com/__cypress/runner/cypress_runner.js:175991:16), <anonymous>:136:54)",
-                "diff": null
-              },
-              "uuid": "923d1725-da60-443e-be28-1e14c1283019",
-              "parentUUID": "2a0d2845-21bd-497d-937e-9661868f2be9",
-              "isHook": false,
-              "skipped": false
-            }
-          ],
-          "suites": [],
-          "passes": [],
-          "failures": [
-            "923d1725-da60-443e-be28-1e14c1283019"
-          ],
-          "pending": [],
-          "skipped": [],
-          "duration": 17593,
-          "root": false,
-          "rootEmpty": false,
-          "_timeout": 2000
-        }
-      ],
-      "passes": [],
-      "failures": [],
-      "pending": [],
-      "skipped": [],
-      "duration": 0,
-      "root": true,
-      "rootEmpty": true,
-      "_timeout": 2000
-    },
-    {
-      "uuid": "b25a45da-98e9-4ccd-9fcb-0faa25960e1f",
-      "title": "",
-      "fullFile": "cypress\\integration\\API_TestCases\\API_Automation_TestCases\\TC_005_API_Automation_TestCases.spec.js",
-      "file": "cypress\\integration\\API_TestCases\\API_Automation_TestCases\\TC_005_API_Automation_TestCases.spec.js",
-      "beforeHooks": [],
-      "afterHooks": [],
-      "tests": [],
-      "suites": [
-        {
-          "uuid": "49242258-8a01-4926-8081-9d9ae4253494",
-          "title": "API Automation Test Cases",
-          "fullFile": "",
-          "file": "",
-          "beforeHooks": [],
-          "afterHooks": [],
-          "tests": [
-            {
-              "title": "GET Request to fetch the list of users",
-              "fullTitle": "API Automation Test Cases GET Request to fetch the list of users",
-              "timedOut": null,
-              "duration": 2003,
+              "duration": 28056,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "//Fetching the List of Users\ncy.request('GET', \"api/users\").then(function (response) {\n  //Validating the Response Status\n  expect(response.status).equal(200); //Validating the firstname \n  expect(response.body.data[1].last_name).equal(\"Weaver\");\n});",
+              "code": "cy.get(dashboardPageLocators.pimModule).should('be.visible').click();\ncy.get(addEmployeePageLocators.addEmployeeTab).click({\n  force: true\n});\nvar firstName = \"John\";\ncy.get(addEmployeePageLocators.firstNameTextbox).type(firstName);\nvar middleName = \"Sam\";\ncy.get(addEmployeePageLocators.middleNameTextbox).type(middleName);\ncy.get(addEmployeePageLocators.lastNameTextbox).type(utilityMethods.randomString(6, \"lowerCase\"));\ncy.get(addEmployeePageLocators.createLoginCheckbox).check();\ncy.get(addEmployeePageLocators.userNameTextbox).type(utilityMethods.randomString(6, \"lowerCase\"));\nvar password = utilityMethods.randomString(9, \"alphaNumeric\");\ncy.get(addEmployeePageLocators.passwordTextbox).type(password);\ncy.get(addEmployeePageLocators.confirmPasswordTextbox).type(password);\ncy.get(addEmployeePageLocators.statusDropdown).select(\"Enabled\");\ncy.get(addEmployeePageLocators.saveButton).should('be.visible').click();\ncy.get(dashboardPageLocators.pimModule).should('be.visible').click();\ncy.get(employeeListPageLocators.employeeListTab).click({\n  force: true\n});\ncy.wait(2000);\ncy.get(employeeListPageLocators.employeeNameSearchTextbox).type(firstName + \" \" + middleName);\ncy.get(employeeListPageLocators.searchButton).should('be.visible').click();\ncy.get(employeeListPageLocators.firstNameValueInFirstResult).should('be.visible').should('contain', firstName + \" \" + middleName);\ncy.get(dashboardPageLocators.welcomeUserNameBanner).should('be.visible').click();\ncy.get(dashboardPageLocators.logoutButton).click();",
               "err": {},
-              "uuid": "59d2bd73-7896-4bad-adb5-a9804e307b20",
-              "parentUUID": "49242258-8a01-4926-8081-9d9ae4253494",
-              "isHook": false,
-              "skipped": false
-            },
-            {
-              "title": "POST Request to create new user",
-              "fullTitle": "API Automation Test Cases POST Request to create new user",
-              "timedOut": null,
-              "duration": 470,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "//Creating Random jobtitle required for Test\nvar jobTitle = utilityMethods.randomString(6, \"upperCase\"); //Creating the new user and Validating the Response\nvar newUser = {\n  \"name\": userName,\n  \"job\": jobTitle\n};\ncy.request('POST', \"api/users\", newUser).then(function (response) {\n  expect(response.status).equal(201);\n  expect(response.body.name).equal(userName);\n  userID = response.body.id;\n});",
-              "err": {},
-              "uuid": "35261c50-b753-4431-ab91-503aeb3c077c",
-              "parentUUID": "49242258-8a01-4926-8081-9d9ae4253494",
-              "isHook": false,
-              "skipped": false
-            },
-            {
-              "title": "PUT Request to update the job title for existing user",
-              "fullTitle": "API Automation Test Cases PUT Request to update the job title for existing user",
-              "timedOut": null,
-              "duration": 399,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "//Creating Random jobtitle required for Test\nvar newJobTitle = utilityMethods.randomString(8, \"upperCase\");\nvar existingUser = {\n  \"name\": userName,\n  \"job\": newJobTitle\n};\ncy.request('PUT', \"api/users\", existingUser).then(function (response) {\n  expect(response.status).equal(200);\n  expect(response.body.name).equal(userName);\n  expect(response.body.job).equal(newJobTitle);\n});",
-              "err": {},
-              "uuid": "cc7826a5-cd8b-4602-b269-4d355c5223db",
-              "parentUUID": "49242258-8a01-4926-8081-9d9ae4253494",
-              "isHook": false,
-              "skipped": false
-            },
-            {
-              "title": "DELETE Request to deleted the created user",
-              "fullTitle": "API Automation Test Cases DELETE Request to deleted the created user",
-              "timedOut": null,
-              "duration": 444,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "cy.request('DELETE', \"api/users/\" + userID).then(function (response) {\n  expect(response.status).equal(204);\n});",
-              "err": {},
-              "uuid": "45d87e98-576b-48b9-aef5-280bb335e082",
-              "parentUUID": "49242258-8a01-4926-8081-9d9ae4253494",
+              "uuid": "542ba206-54b7-427f-938e-803e85fff7c0",
+              "parentUUID": "a04b3dca-0963-4ab9-bb10-b5a2a8962649",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "59d2bd73-7896-4bad-adb5-a9804e307b20",
-            "35261c50-b753-4431-ab91-503aeb3c077c",
-            "cc7826a5-cd8b-4602-b269-4d355c5223db",
-            "45d87e98-576b-48b9-aef5-280bb335e082"
+            "542ba206-54b7-427f-938e-803e85fff7c0"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 3316,
+          "duration": 28056,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

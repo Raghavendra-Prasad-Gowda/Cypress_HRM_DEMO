@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 1,
-    "start": "2020-10-14T10:12:26.943Z",
-    "end": "2020-10-14T10:12:48.404Z",
-    "duration": 21461,
+    "start": "2020-10-21T11:34:22.617Z",
+    "end": "2020-10-21T11:34:44.407Z",
+    "duration": 21790,
     "testsRegistered": 2,
     "passPercent": 50,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "7baab15f-0006-4c4e-97f9-a91e35a69ad9",
+      "uuid": "bfab2ee6-1738-4501-86d7-0953e7a80a3a",
       "title": "",
       "fullFile": "cypress\\integration\\UI_Automation_TestCases\\Login_Functionality_TestCases\\TC_001_LoginFeature.spec.js",
       "file": "cypress\\integration\\UI_Automation_TestCases\\Login_Functionality_TestCases\\TC_001_LoginFeature.spec.js",
@@ -27,8 +27,8 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "aae2e50a-4416-46a8-9839-95b70f93b7a7",
-          "title": "Login Functionality Verification",
+          "uuid": "90ee79cd-9c93-431f-9301-c00b3cbc628c",
+          "title": "Login Functionality of HRM Site",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
@@ -36,55 +36,55 @@
           "tests": [
             {
               "title": "Successful Login Functionality Verification",
-              "fullTitle": "Login Functionality Verification Successful Login Functionality Verification",
+              "fullTitle": "Login Functionality of HRM Site Successful Login Functionality Verification",
               "timedOut": null,
-              "duration": 13009,
+              "duration": 12582,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "//Login to the HRM Demo Website with Valid Username and Password\ncy.Login(userDetails.validUsername, userDetails.validPassword, loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton); //Validate the display of Username \ncy.get(dashboardPageLocators.welcomeUserNameBanner).should(\"be.visible\").should('have.length.greaterThan', 0).click(); //Click on Logout button\ncy.get(dashboardPageLocators.logoutButton).click();",
+              "code": "cy.Login(appCredentials.validUsername, appCredentials.validPassword);\ncy.get(dashboardPageLocators.welcomeUserNameBanner).should(\"be.visible\").should('have.length.greaterThan', 0).click();\ncy.get(dashboardPageLocators.logoutButton).click();",
               "err": {},
-              "uuid": "f1c52825-9253-4ebd-aa28-d621a0da9b46",
-              "parentUUID": "aae2e50a-4416-46a8-9839-95b70f93b7a7",
+              "uuid": "49896aa8-9722-4aa4-8328-79462543792c",
+              "parentUUID": "90ee79cd-9c93-431f-9301-c00b3cbc628c",
               "isHook": false,
               "skipped": false
             },
             {
               "title": "Verification of error message display upon unsuccessful login",
-              "fullTitle": "Login Functionality Verification Verification of error message display upon unsuccessful login",
+              "fullTitle": "Login Functionality of HRM Site Verification of error message display upon unsuccessful login",
               "timedOut": null,
-              "duration": 8150,
+              "duration": 8829,
               "state": "failed",
               "speed": null,
               "pass": false,
               "fail": true,
               "pending": false,
-              "context": "[\n  \"D:\\\\POC_Github_Integration\\\\Cypress_HRM_DEMO\\\\cypress\\\\results\\\\assets/UI_Automation_TestCases\\\\Login_Functionality_TestCases\\\\TC_001_LoginFeature.spec.js/Login Functionality Verification -- Verification of error message display upon unsuccessful login (failed).png\",\n  \"../videos/UI_Automation_TestCases\\\\Login_Functionality_TestCases\\\\TC_001_LoginFeature.spec.js.mp4\"\n]",
-              "code": "//Login to the HRM Demo Website with Valid Username and Password\ncy.Login(userDetails.invalidUsername, userDetails.invalidPassword, loginPageLocators.usernameTextbox, loginPageLocators.passwordTextbox, loginPageLocators.loginButton); //Verifying the error message display \ncy.get(loginPageLocators.invalidCredentialsMessageSpan).should('be.visible').should('contain', \"Tester\");",
+              "context": "[\n  \"D:\\\\Gauge_Cypress Projects\\\\Cypress_HRM_DEMO\\\\cypress\\\\results\\\\assets/UI_Automation_TestCases\\\\Login_Functionality_TestCases\\\\TC_001_LoginFeature.spec.js/Login Functionality of HRM Site -- Verification of error message display upon unsuccessful login (failed).png\",\n  \"../videos/UI_Automation_TestCases\\\\Login_Functionality_TestCases\\\\TC_001_LoginFeature.spec.js.mp4\"\n]",
+              "code": "cy.Login(appCredentials.invalidUsername, appCredentials.invalidPassword);\ncy.get(loginPageLocators.invalidCredentialsMessageSpan).should('be.visible').should('contain', \"Tester\");",
               "err": {
                 "message": "AssertionError: Timed out retrying: expected '<span#spanMessage>' to contain 'Tester'",
-                "estack": "AssertionError: Timed out retrying: expected '<span#spanMessage>' to contain 'Tester'\n    at Context.eval (https://opensource-demo.orangehrmlive.com/__cypress/tests?p=cypress\\integration\\UI_Automation_TestCases\\Login_Functionality_TestCases\\TC_001_LoginFeature.spec.js:126:82)",
+                "estack": "AssertionError: Timed out retrying: expected '<span#spanMessage>' to contain 'Tester'\n    at Context.eval (https://opensource-demo.orangehrmlive.com/__cypress/tests?p=cypress\\integration\\UI_Automation_TestCases\\Login_Functionality_TestCases\\TC_001_LoginFeature.spec.js:128:82)",
                 "diff": null
               },
-              "uuid": "bccca7f5-2cdc-4d54-b446-d90273bf1da8",
-              "parentUUID": "aae2e50a-4416-46a8-9839-95b70f93b7a7",
+              "uuid": "cadf4536-2391-44ce-a7e2-23ea09a8c40c",
+              "parentUUID": "90ee79cd-9c93-431f-9301-c00b3cbc628c",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "f1c52825-9253-4ebd-aa28-d621a0da9b46"
+            "49896aa8-9722-4aa4-8328-79462543792c"
           ],
           "failures": [
-            "bccca7f5-2cdc-4d54-b446-d90273bf1da8"
+            "cadf4536-2391-44ce-a7e2-23ea09a8c40c"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 21159,
+          "duration": 21411,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

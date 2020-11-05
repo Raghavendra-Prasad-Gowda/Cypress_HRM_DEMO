@@ -1,0 +1,7 @@
+{
+    "selectAllCheckbox":"#ohrmList_chkSelectAll",
+
+    "deleteButton":"#btnDelete",
+    
+    "dialogOKButton":"#dialogDeleteBtn"
+}

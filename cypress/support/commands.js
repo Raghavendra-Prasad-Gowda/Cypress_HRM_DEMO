@@ -24,17 +24,17 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
-
+const loginPageLocators = require ('../pageObjects/loginPageObjects.json');
 //Login Functionality Command
-Cypress.Commands.add("Login",(email, password, emailTextBoxLocator, passwordTextBoxLocator,submitButtonLocator)=>{
+Cypress.Commands.add("Login",(email, password)=>{
 
     //Entering the Email
-    cy.get(emailTextBoxLocator).should('be.visible').type(email);
+    cy.get(loginPageLocators.usernameTextbox).should('be.visible').type(email);
 
     //Entering the Password
-    cy.get(passwordTextBoxLocator).should('be.visible').type(password);
+    cy.get(loginPageLocators.passwordTextbox).should('be.visible').type(password);
 
     //Clicking the Submit Buttom
-    cy.get(submitButtonLocator).should('be.visible').click();
+    cy.get(loginPageLocators.loginButton).should('be.visible').click();
 
 })

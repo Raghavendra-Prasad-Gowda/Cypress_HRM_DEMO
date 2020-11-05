@@ -4,14 +4,16 @@
   "description": "HRM Demo Cypress ",
   "main": "index.js",
   "scripts": {
-    "cypress:tests": "node_modules/.bin/cypress run",
+    "cypress:tests": "cypress run --browser chrome --headless true",
     "cypress:open": "node_modules/.bin/cypress open",
+    "cypress:dashboardRun":"cypress run --record --key 3bfe97eb-5be4-43eb-a285-e158a64f76b6",
     "Logintest":"cypress run --spec cypress/integration/UI_Automation_TestCases/Login_Functionality_TestCases/TC_001_LoginFeature.spec.js",
     "merge:reports": "mochawesome-merge 'cypress/results/specs/*.json' > cypress/results/mochawesome.json",
     "generate:report": "marge cypress/results/mochawesome.json --reportDir cypress/results --reportFilename index.html",
     "generate:testReport":"npm run merge:reports && npm run generate:report",
     "cypressTests:generateTestReport":"npm run cypress:tests || npm run generate:testReport"
   },
+  
   "author": "Raghavendra Prasad R",
   "license": "ISC",
   "devDependencies": {
